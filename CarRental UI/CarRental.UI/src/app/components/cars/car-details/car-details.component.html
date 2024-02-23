@@ -1,0 +1,70 @@
+<app-user-navbar></app-user-navbar>
+<!--product details-->
+<section class="catalogue">
+    <div class="container heading text-center">
+      <h1 class="text-center font-weight-bold mt-3">CAR DETAILS</h1>
+    </div>
+
+<div class="container" id="productDetailId">
+    <div class="row">
+        <div class="product-img text-center" *ngIf="carDetail">
+            <img src="{{carDetail.imageUrl}}" alt="Car Image">
+        </div>
+        <p *ngIf="!carDetail">No car Image Found</p>
+       
+            <div class="col-lg-6  mt-5 mb-5" *ngIf="carDetail" >
+                <div class="product-info text-center">
+                    <h1>Car Name: {{carDetail.name}}</h1>
+                    <h3>Makers : {{carDetail.maker}}</h3>
+                    <h3>Model : {{carDetail.model}}</h3>
+                    <h3>Rent Per Day: <span>&#8377;{{carDetail.pricePerDay}}</span></h3>
+                   
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-5" *ngIf="carDetail">
+                <div class="row">
+                     <!--Form to be filled by the user to rent a car-->
+                 <form  class="form-horizontal" (ngSubmit)="rentCar()" #form="ngForm" [formGroup]="carRentalForm">
+                   
+                    <div class="form-group mt-2">
+                        <label for="customerName">customer Name :</label>
+                        <input type="text" formControlName="customerName" placeholder="customerName" class="form-control">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="carName">Car Name :</label>
+                        <input type="text" formControlName="carName" placeholder="Car Name" class="form-control" [(ngModel)]="carDetail.name">
+                    </div>
+                   
+                    <div class="form-group mt-2">
+                        <label for="startDate">Start Date :</label>
+                        <input type="date" formControlName="startDate" placeholder="Start Date" class="form-control" >
+                    </div>
+                    
+                    <div class="form-group mt-2">
+                        <label for="endDate">End Date :</label>
+                        <input type="date" formControlName="endDate" placeholder="End Date" class="form-control">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="carModel">Car Model :</label>
+                        <input type="text" formControlName="carModel" placeholder="Car Model" class="form-control" [(ngModel)]="carDetail.model">
+                    </div>
+
+                    <div class="form-group mt-2">
+                        <label for="carMaker">Car Maker :</label>
+                        <input type="text" formControlName="carMaker" placeholder="Car Maker" class="form-control" [(ngModel)]="carDetail.maker">
+                    </div>
+                    
+                    
+                    <button (click)="rentCar()" class="btn btn-dark rounded-pill mt-3"><i class="fa-solid fa-cart-shopping px-1"></i>Rent A Car</button>
+                </form>
+                </div>
+                
+            </div>
+               
+
+    </div>
+</div>
+</section>

@@ -1,0 +1,21 @@
+<app-user-navbar></app-user-navbar>
+
+
+
+  <div class="row" *ngIf="rentalAgreements && rentalAgreements.length > 0">
+    <!--Product 1-->
+    <div class="col-lg-3 col-12 py-2" *ngFor="let item of rentalAgreements" >
+      <div class="card text-center " style="width: 16rem;">
+       
+        <div class="card-body h-100">
+          <h5 class="card-title text-capitalize">customer Name : {{item.customerName}}</h5>
+          <h6 class="card-subtitle mb-2 text-muted"><span>&#8377;</span>{{item.rentalPrice}}</h6>
+          <p class="card-text">{{item.carName}}</p>
+          <p class="card-text">{{item.startDate}}</p>
+          <p class="card-text">{{item.endDate}}</p>
+          <a routerLink="/car-details/{{item.id}}" class="btn rounded-pill btn-dark">View Car</a>
+        </div>
+      </div>
+    </div>
+   </div>
+   <P *ngIf="!rentalAgreements">No Rental Agreemnent Available</P>

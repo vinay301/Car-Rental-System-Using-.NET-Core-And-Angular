@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "ngx-filter-pipe": "^2.1.2"
+  }
+}

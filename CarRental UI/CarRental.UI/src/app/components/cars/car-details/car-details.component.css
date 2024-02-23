@@ -1,0 +1,43 @@
+
+.heading h1{
+    margin:5px 0px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.product-img{
+    margin: 0px 5px;
+   margin-top: 20px;
+}
+.product-img img{
+    width: 100vh;
+    height: 70%;
+    border-radius: 30px;
+}
+
+#productDetailId{
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+
+.input-group{
+justify-content: center;
+}
+
+.product-info .btn{    
+    color:white;
+    margin-top: 3px;
+}
+.product-info h1{
+    margin:5px 0px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+

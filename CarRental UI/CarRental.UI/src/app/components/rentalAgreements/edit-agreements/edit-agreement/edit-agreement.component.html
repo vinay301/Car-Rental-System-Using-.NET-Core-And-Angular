@@ -1,0 +1,51 @@
+<!-- <p>hi</p>
+<div *ngIf="rentDetail">
+    <p>Total price: {{ calculateTotalPrice(rentDetail, rentDetail.startDate, rentDetail.endDate) | currency }}</p>
+</div> -->
+
+<div class="col-lg-6 mb-5">
+    <div class="row">
+         <!--Form to be filled by the user to rent a car-->
+     <form  class="form-horizontal" #form="ngForm">
+       
+        <div class="form-group mt-2">
+            <label for="id">Agreement ID :</label>
+            <input type="text" formControlName="id" placeholder="agreement id" class="form-control" readonly [(ngModel)]="carRentalForm.id">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="customerName">customer Name :</label>
+            <input type="text" formControlName="customerName" placeholder="customerName" class="form-control" [(ngModel)]="carRentalForm.customerName">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="carName">Car Name :</label>
+            <input type="text" formControlName="carName" placeholder="Car Name" class="form-control">
+        </div>
+       
+        <div class="form-group mt-2">
+            <label for="startDate">Start Date :</label>
+            <input type="date" formControlName="startDate" placeholder="Start Date" class="form-control">
+        </div>
+        
+        <div class="form-group mt-2">
+            <label for="endDate">End Date :</label>
+            <input type="date" formControlName="endDate" placeholder="End Date" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="carModel">Car Model :</label>
+            <input type="text" formControlName="carModel" placeholder="Car Model" class="form-control">
+        </div>
+
+        <div class="form-group mt-2">
+            <label for="carMaker">Car Maker :</label>
+            <input type="text" formControlName="carMaker" placeholder="Car Maker" class="form-control">
+        </div>
+        
+        
+        <button class="btn btn-dark rounded-pill mt-3"><i class="fa-solid fa-cart-shopping px-1"></i>Rent A Car</button>
+    </form>
+     </div>
+    
+</div> 

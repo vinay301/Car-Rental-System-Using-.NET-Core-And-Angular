@@ -1,0 +1,52 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container col-6 mt-3">
+    <h2 class="text-center">Add New Car</h2>
+    <p class="text-center">Add New Car to the portal</p>
+    <div class="row">
+        <form action="" #form="ngForm" (ngSubmit)="addCars()" class="m-2">
+            <div class="form-group row pb-2">
+                <label>Car Name</label>
+                <input class="mt-1" type="text" placeholder="Enter Car Name" value="" name = "name" [(ngModel)]="addCarRequest.name"/>
+            </div>
+
+            <div class="form-group row pb-2">
+                <label>Car Model</label>
+                <input class="mt-1" type="text" placeholder="Enter Model of Car" value="" name="model" [(ngModel)]="addCarRequest.model"/>
+            </div>
+
+            <div class="form-group row pb-2">
+                <label>Car Makers</label>
+                <input class="mt-1" type="text" placeholder="Enter Maker's Name" value="" name="maker" [(ngModel)]="addCarRequest.maker" />
+            </div>
+
+            <div class="form-group row pb-2">
+                <label>Car Rent Per Day</label>
+                <input class="mt-1" type="number" placeholder="Enter Rent" value="" name="pricePerDay" [(ngModel)]="addCarRequest.pricePerDay"/>
+            </div>
+
+            <div class="form-group row pb-2">
+              <label>Car Image Url</label>
+              <input class="mt-1" type="url" placeholder="www.google.com" value="" name="imageUrl" [(ngModel)]="addCarRequest.imageUrl">
+            </div>
+
+            <fieldset class="form-group pb-2">
+                <div class="row">
+                    <div class="form-group">
+                        <input type="radio" name="radio" id="r-1" />
+                        <label class="m-1" for="r-1">Available</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="radio" name="radio" id="r-2" />
+                        <label class="m-1" for="r-2">Booked</label>
+                    </div>
+                </div>
+            </fieldset>
+
+            <div class="form-group row pb-2">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-success">Save Car</button>
+                 </div>
+             </div>
+          </form>
+    </div>
+  </div>

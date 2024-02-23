@@ -1,0 +1,31 @@
+
+ <!--Product Catalogue with Pagination-->
+ <section class="catalogue mb-5">
+    <div class="container heading text-center">
+      <h2 class="text-center font-weight-bold mt-4 mb-3">Available Cars For Rent</h2>
+    </div>
+
+    <div class="container">
+      <label for="">Filter Car Model: &nbsp; </label>
+       <input type="text" [(ngModel)]="carModel">
+       <button type="button" (click)="onModelFilter()">Search</button>
+       <button type="button" (click)="onModelFilterClear()">Clear</button>
+      <div class="row" *ngIf="car && car.length > 0">
+       <!--Product 1-->
+       <div class="col-lg-3 col-12 py-2" *ngFor="let item of car">
+         <div class="card text-center " style="width: 16rem;">
+           <img class="card-img-top" src="{{item.imageUrl}}" alt="Car Image">
+           <div class="card-body h-100">
+             <h5 class="card-title text-capitalize">{{item.name}}</h5>
+             <h6 class="card-subtitle mb-2 text-muted"><span>&#8377;</span>{{item.pricePerDay}}</h6>
+             <p class="card-text">{{item.model}}</p>
+             <p class="card-text">{{item.maker}}</p>
+             <a routerLink="/car-details/{{item.id}}" class="btn rounded-pill btn-dark">View Car</a>
+           </div>
+         </div>
+       </div>
+      </div>
+      <P *ngIf="!car || car.length <= 0">No Car Available for rent</P>
+     </div>
+  </section>
+
